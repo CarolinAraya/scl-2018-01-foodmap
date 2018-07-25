@@ -1,3 +1,10 @@
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 43.5293101, lng: -5.6773233},
+      zoom: 13
+    });
+  }
+
 function findMe(){
     var output = document.getElementById('map');
     // Verificar si soporta geolocalizacion
