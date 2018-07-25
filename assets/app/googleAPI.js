@@ -12,7 +12,7 @@ function findMe(){
         var longitude = posicion.coords.longitude;
         var imgURL = "maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters"+latitude+","+longitude+"&size=600x300&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyDTQZkvA12MM0uPt4zxpc50EWHX5q9x0P4";
         output.innerHTML ="<img src='"+imgURL+"'>";
-        maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters
+        
     }
     function error(){
         output.innerHTML = "<p>No se pudo obtener tu ubicación</p>";
