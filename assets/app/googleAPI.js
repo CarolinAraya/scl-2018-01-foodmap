@@ -18,14 +18,14 @@ function initMap(position) {
     service.nearbySearch({
         location: pyrmont,
         radius: 500,
-        type: ['store']
+        type: ['restaurant']
     }, callback);
 
     function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             for (var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
-                console.log(results[i]);
+                getInfoPlaces(results[i]);
             }
             
         }
@@ -42,6 +42,14 @@ function initMap(position) {
             infowindow.setContent(place.name);
             infowindow.open(map, this);
         });
+    }
+
+    /* get places */
+
+    function getInfoPlaces(place) {
+        var name = place.name;
+        var address = place.vicinity;
+        var photo = place.photo;
     }
 
     /* Autocomplete */
