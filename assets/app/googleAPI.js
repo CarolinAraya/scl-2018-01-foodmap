@@ -26,6 +26,7 @@ function initMap(position) {
             for (var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
             }
+            console.log(results);
         }
     }
 
