@@ -3,13 +3,13 @@ var infowindow;
 
 navigator.geolocation.getCurrentPosition(initMap);
 
-function initMap() {
+function initMap(position) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
-    var pos = { lat, lng };
+    var pyrmont = { lat, lng };
 
     map = new google.maps.Map(document.getElementById('map'), {
-        center: pos,
+        center: pyrmont,
         zoom: 15
     });
 
@@ -18,27 +18,28 @@ function initMap() {
     service.nearbySearch({
         location: pyrmont,
         radius: 500,
-        type: ['restaurant']
+        type: ['store']
     }, callback);
-}
 
-function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
+    function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+            }
         }
+    }
+
+    function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+        });
     }
 }
 
-function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-    });
-
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-    });
-}
