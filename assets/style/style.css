@@ -1,15 +1,34 @@
 #map {
-    height: 80%;
+    height: 95%;
   }
   /* Optional: Makes the sample page fill the window. */
   html, body, .map {
     height: 100%;
     padding: 0;
     background-color: black;
-    color: rgb(255, 166, 0);
+    color: orange;
   }
 
-  .select{
-      
-  }
-  
+  .input-field.col label {
+    left: .75rem;
+    color: orange;
+    /* size: 80em; */
+}
+
+  .select-wrapper+label {
+    position: absolute;
+    top: -30px;
+    font-size: .9rem;
+}
+
+dropdown:focus {
+    border-bottom: 1px solid orange;
+}
+
+/* img {
+    border-style: none;
+    max-width: 100px;
+    max-height: 100px;
+    padding: 1px;
+}
+ */

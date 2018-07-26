@@ -53,7 +53,7 @@ function initMap(position) {
 
         var toPrint = document.getElementById("restaurant");
 
-        toPrint.innerHTML += `<h3>${name}</h3><p>${address}</p><img src='${photo}'></img>`;
+        toPrint.innerHTML += `<img src='${photo}'></img>`;
     }
     
 }
