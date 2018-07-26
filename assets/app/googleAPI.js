@@ -52,8 +52,10 @@ function initMap(position) {
         var photo = place.photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
 
         var toPrint = document.getElementById("restaurant");
+        var modalPhoto = document.getElementById("modalPhoto");
 
         toPrint.innerHTML += `<img src='${photo}'></img>`;
+        modalPhoto.innerHTML += `<h4>${name}</h4><p>${address}/p>`
     }
     
 }
