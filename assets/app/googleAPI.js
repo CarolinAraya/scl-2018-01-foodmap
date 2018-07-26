@@ -41,5 +41,6 @@ function initMap(position) {
             infowindow.open(map, this);
         });
     }
+    
 }
 
