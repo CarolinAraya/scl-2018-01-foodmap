@@ -25,7 +25,7 @@ function initMap(position) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             for (var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
-                getInfoPlaces(results[i]);
+                getInfoPlacesAndPrint(results[i]);
             }
             
         }
@@ -46,10 +46,14 @@ function initMap(position) {
 
     /* get places */
 
-    function getInfoPlaces(place) {
+    function getInfoPlacesAndPrint(place) {
         var name = place.name;
         var address = place.vicinity;
-        var photo = place.photo;
+        var photo = place.photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
+
+        var toPrint = document.getElementById("restaurant");
+
+        toPrint.innerHTML += `<h3>${name}</h3><p>${address}</p><img src='${photo}'></img>`;
     }
 
     /* Autocomplete */
