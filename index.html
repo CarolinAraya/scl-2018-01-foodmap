@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTQZkvA12MM0uPt4zxpc50EWHX5q9x0P4&libraries=places" async
         defer></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,6 +14,14 @@
 </head>
 
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col s12 center">
+            <h1>Food Map</h1>
+        </div>
+    </div>
+</div>
+
     <div class="pac-card" id="pac-card">
         <div>
             <div id="title">
@@ -39,9 +49,16 @@
             <input id="pac-input" type="text" placeholder="Enter a location">
         </div>
     </div>
+
     <div id="map"></div>
     <div id="restaurant"></div>
 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYQW0o0YMY9NDMjOI3ur2BPA60bLU08xM&libraries=places" async
+        defer></script>
     <script src="assets/app/googleAPI.js"></script>
     <script src="assets/app/geolocation.js"></script>
 </body>
